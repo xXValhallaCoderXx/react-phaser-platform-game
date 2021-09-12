@@ -4,10 +4,24 @@ import "./index.css";
 import App from "./App";
 
 import reportWebVitals from "./reportWebVitals";
-
+import Phaser from "phaser";
 import { store } from "./config/store";
 import { Provider } from "react-redux";
-import "./phaser-core";
+import GameScene from "./phaser-core/scenes/game-scene";
+
+const config = {
+  type: Phaser.AUTO,
+
+  title: "Platform Quest",
+  parent: "phaser",
+  width: 360,
+  height: 640,
+  scaleMode: 3,
+  scene: GameScene,
+};
+
+new Phaser.Game(config);
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
