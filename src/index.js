@@ -2,22 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import Phaser from "phaser";
+
 import reportWebVitals from "./reportWebVitals";
-import PhaserCore from "./phaser-core";
+
 import { store } from "./config/store";
 import { Provider } from "react-redux";
-
-const config = {
-  type: Phaser.AUTO,
-  mode: Phaser.Scale.FIT,
-  parent: "phaser",
-
-  scene: PhaserCore,
-};
-
-const game = new Phaser.Game(config);
-
+import "./phaser-core";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

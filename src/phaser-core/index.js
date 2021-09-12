@@ -3,6 +3,7 @@ import Phaser from "phaser";
 import logoImg from "../logo.svg";
 import store from "../config/store";
 import { increment } from "../slices/ui";
+
 class PhaserCore extends Phaser.Scene {
   constructor(config) {
     super(config);
@@ -33,3 +34,13 @@ class PhaserCore extends Phaser.Scene {
 }
 
 export default PhaserCore;
+
+const config = {
+  type: Phaser.AUTO,
+  mode: Phaser.Scale.FIT,
+  parent: "phaser",
+
+  scene: PhaserCore,
+};
+
+const game = new Phaser.Game(config);
